@@ -4,6 +4,10 @@ import joblib
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+import warnings
+
+# Ignorer les warnings de noms de features scikit-learn
+warnings.filterwarnings("ignore", category=UserWarning)
 
 st.set_page_config(
     page_title="EduAnalytics AI",

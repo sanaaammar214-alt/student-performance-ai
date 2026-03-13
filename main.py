@@ -1,5 +1,10 @@
 import os
 import joblib
+import warnings
+
+# Ignorer les warnings de noms de features scikit-learn
+warnings.filterwarnings("ignore", category=UserWarning)
+
 from src.load_data import load_raw_data
 from src.preprocessing import clean_data, encode_data, get_numeric_features
 from src.pca_analysis import apply_pca
