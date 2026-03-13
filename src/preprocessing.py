@@ -27,11 +27,11 @@ def clean_data(df):
         if df_clean[col].isnull().any():
             if df_clean[col].dtype in ['float64', 'int64']:
                 median_val = df_clean[col].median()
-                df_clean[col].fillna(median_val, inplace=True)
+                df_clean[col] = df_clean[col].fillna(median_val)
                 print(f"  [Preprocessing] '{col}' : {df_clean[col].isnull().sum()} NaN remplacés par médiane ({median_val})")
             else:
                 mode_val = df_clean[col].mode()[0]
-                df_clean[col].fillna(mode_val, inplace=True)
+                df_clean[col] = df_clean[col].fillna(mode_val)
                 print(f"  [Preprocessing] '{col}' : NaN remplacés par mode ('{mode_val}')")
 
     # Vérification des scores (doivent être entre 0 et 100)
