@@ -21,7 +21,7 @@ def main():
         df_clean.to_csv('data/processed/students_clean.csv', index=False)
         
         # Encodage pour ML
-        df_encoded = encode_data(df_clean.select_dtypes(include=['number'])) # Simple example
+        df_encoded = encode_data(df_clean) 
         
         # 3. PCA
         print("Analyse PCA...")

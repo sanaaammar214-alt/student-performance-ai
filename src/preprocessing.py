@@ -16,5 +16,4 @@ def encode_data(df):
     """
     Encodage des variables catégorielles.
     """
-    # TODO: implémenter l'encodage (OneHot, LabelEncoding)
-    return pd.get_dummies(df)
+    return pd.get_dummies(df, drop_first=True)
